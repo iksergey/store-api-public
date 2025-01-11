@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    container_name: store-api-db
+    environment:
+      - POSTGRES_PASSWORD=12345678
+    ports:
+      - "15432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  store-api:
+    image: iksergey/store-api
+    container_name: store-api
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - ConnectionStrings__PostgreSQLConnection=Host=postgres;Port=5432;Database=postgres;Username=postgres;Password=12345678
+    ports:
+      - "15433:9090"
+
+volumes:
+  postgres-data:
