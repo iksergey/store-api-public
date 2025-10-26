@@ -20,7 +20,7 @@
 
 # Вы можете написать его самостоятельно уже сейчас
 
-# [БОНУС 🤝](https://stepik.org/a/212419/pay?promo=015218bb0566708f&utm_source=github.com&utm_medium=store_api_public&utm_campaign=promo&utm_term=first)
+# [БОНУС 🤝](https://stepik.org/a/212419/pay?promo=ae779efd90019cf1&utm_source=github.com&utm_medium=store_api_public&utm_campaign=promo&utm_term=first)
   
 ## Инструкция по локальному развертыванию проекта
 
